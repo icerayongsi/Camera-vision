@@ -1,10 +1,10 @@
 # -- coding: utf-8 --
 
-sys.path.append(os.path.join(os.path.dirname(__file__), 'libs'))
-
 import sys
 import os
 import configparser
+
+sys.path.append(os.path.join(os.path.dirname(__file__), 'libs'))
 
 from datetime import datetime
 from ctypes import *
