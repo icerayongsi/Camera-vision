@@ -1,4 +1,4 @@
 from ImageSave import Image
 
 if __name__ == "__main__":
-    Image().save()
+    Image().save(showResult=False)

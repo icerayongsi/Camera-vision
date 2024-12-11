@@ -54,7 +54,8 @@ HB_format_list = [
     PixelType_Gvsp_HB_RGB16_Packed,
     PixelType_Gvsp_HB_BGR16_Packed,
     PixelType_Gvsp_HB_RGBA16_Packed,
-    PixelType_Gvsp_HB_BGRA16_Packed]
+    PixelType_Gvsp_HB_BGRA16_Packed
+]
 
 
 class Image:
@@ -148,7 +149,7 @@ class Image:
                 return MV_E_OPENFILE
         return 0
     
-    def save(self):
+    def save(self, showResult = True):
         try:
             MvCamera.MV_CC_Initialize()
 
@@ -196,11 +197,11 @@ class Image:
 
             if env == "dev" : print("Save image type : %s" % nSaveImageType)
 
-            if nSaveImageType == "raw":    nSaveImageType = 0
+            if nSaveImageType   == "raw" : nSaveImageType = 0
             elif nSaveImageType == "jpeg": nSaveImageType = 1
-            elif nSaveImageType == "bmp":  nSaveImageType = 2
+            elif nSaveImageType == "bmp" : nSaveImageType = 2
             elif nSaveImageType == "tiff": nSaveImageType = 3
-            elif nSaveImageType == "png":  nSaveImageType = 4
+            elif nSaveImageType == "png" : nSaveImageType = 4
             else:
                 print("Image type error!")
                 sys.exit()
@@ -252,7 +253,7 @@ class Image:
                     raise Exception("save image fail! ret[0x%x]" % ret)
                 else:
                     atTime = current_time.strftime("%H-%M-%S-%f")
-                    print("Save image success! at %s" % atTime)
+                    if showResult : print("Save image success! at %s" % atTime)
 
                 cam.MV_CC_FreeImageBuffer(stOutFrame)
             else:
