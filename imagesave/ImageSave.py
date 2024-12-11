@@ -146,7 +146,6 @@ class Image:
             except PermissionError:
                 print("save error raw file executed failed!")
                 return MV_E_OPENFILE
-
         return 0
     
     def save(self):
@@ -254,7 +253,6 @@ class Image:
                 else:
                     atTime = current_time.strftime("%H-%M-%S-%f")
                     print("Save image success! at %s" % atTime)
-
 
                 cam.MV_CC_FreeImageBuffer(stOutFrame)
             else:
