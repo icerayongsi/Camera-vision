@@ -1,12 +1,13 @@
 # -- coding: utf-8 --
 
-import sys
-from ctypes import *
-import configparser
-from datetime import datetime
-
-import os
 sys.path.append(os.path.join(os.path.dirname(__file__), 'libs'))
+
+import sys
+import os
+import configparser
+
+from datetime import datetime
+from ctypes import *
 from MvCameraControl_class import *
 
 Config = configparser.ConfigParser()
